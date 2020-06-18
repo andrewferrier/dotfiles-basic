@@ -2,5 +2,6 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-cp $DIR/.bashrc ~
+rm ~/.bashrc
+ln -s $DIR/.bashrc ~/.bashrc
 curl https://raw.githubusercontent.com/tpope/vim-sensible/master/plugin/sensible.vim > ~/.vimrc
