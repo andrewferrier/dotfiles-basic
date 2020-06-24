@@ -1,9 +1,10 @@
 #!/bin/bash
 
 if command -v apt-get; then
-  if ! command -v git; then
-    apt-get update && apt-get install -y git
-  fi
+  apt-get update
+  
+  command -v git || apt-get install -y git
+  command -v vim || apt-get install -y vim
 fi
 
 cd ~
