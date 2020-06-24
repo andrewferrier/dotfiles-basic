@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if ! command -v git; then
-  if command -v apt-get; then
+if ! command -v git >/dev/null; then
+  if command -v apt-get >/dev/null; then
     apt-get update && apt-get install -y git
   else
     echo "Don't know how to install git."
