@@ -1,10 +1,12 @@
 #!/bin/bash
 
-if command -v apt-get; then
-  apt-get update
-  
-  command -v git || apt-get install -y git
-  command -v vim || apt-get install -y vim
+if ! command -v git; then
+  if command -v apt-get; then
+    apt-get update && apt-get install -y git
+  else
+    echo "Don't know how to install git."
+    exit 1
+  fi
 fi
 
 cd ~
