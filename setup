@@ -7,9 +7,9 @@ ln -s $DIR/.bashrc ~/.bashrc
 curl https://raw.githubusercontent.com/tpope/vim-sensible/master/plugin/sensible.vim > ~/.vimrc
 
 if command -v apt-get >/dev/null; then
-  command -v vim >/dev/null || (apt-get update && apt-get install -y vim)
+  command -v vim >/dev/null || (sudo apt-get update && sudo apt-get install -y vim)
 elif command -v yum >/dev/null; then
-  command -v vim >/dev/null || (yum install vim)
+  command -v vim >/dev/null || (sudo yum install vim)
 else
   echo "Don't know how to install on this platform."
   exit 1
