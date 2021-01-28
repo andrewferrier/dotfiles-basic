@@ -3,6 +3,8 @@
 if ! command -v git >/dev/null; then
   if command -v apt-get >/dev/null; then
     apt-get update && apt-get install -y git
+  elif command -v yum >/dev/null; then
+    yum install git
   else
     echo "Don't know how to install git."
     exit 1
